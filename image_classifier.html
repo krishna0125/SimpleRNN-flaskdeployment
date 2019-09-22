@@ -1,0 +1,44 @@
+<html> 
+
+<head>
+<title>1andonly3</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+     body{
+      background-image: url('../static/capture.jpg');
+       background-repeat: no-repeat;
+       height:100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;}
+</style>
+<script type="text/javascript">
+function abc(event){
+var input = event.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+      var dataURL = reader.result; 
+      document.getElementById('output').src = dataURL;
+    };
+
+    reader.readAsDataURL(input.files[0]);   
+  
+  };
+
+</script>
+</head>
+
+<body>
+
+    <h1>Debris Detector</h1>
+
+    <form action="/predict" method="post" enctype="multipart/form-data">
+      <input type="file" name="image" value="Upload" onchange="abc(event)">
+      <input type="submit" value="Predict">
+    </form>
+
+</body>
+
+</html>
