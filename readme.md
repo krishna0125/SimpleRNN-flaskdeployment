@@ -1,1 +1,1 @@
-This is Flask App Created for Detecting Debris using SimpleRNN.
+This is Flask App created for Detecting Debris using SimpleRNN.
